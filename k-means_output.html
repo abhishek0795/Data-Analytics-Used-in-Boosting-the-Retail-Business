@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+
+    <title>K-Means Output</title>
+
+    <style>
+
+        a.active {
+        background-color:#af41aa;
+        color: white;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+
+        /* list styling */
+        ol {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./k-means.html">K-Means Clustering</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./k-means_output.html">K-Means Clustering Output</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="container content mt-5">
+        <h2 class="display-4 mb-5" align="center"><strong>K-Means Clustering Output</strong></h2>
+        <br>
+        <br>
+        <h2>After merging order_id and user_id:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture1.PNG" alt="merging rows">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Load the products csv file data:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture2.PNG" alt="products csv">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Load the aisles csv file data:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture3.PNG" alt="aisles csv">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Print shape of aisles:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture4.PNG" alt="aisles shape">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Merge the aisle_id,product_id,order_id rows of products, orders and aisles:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture5.PNG" alt="merging rows aisle product order" width="1080">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Top 10 rows in the products list:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture6.PNG" alt="top 10 products">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Length of total number of unique products list:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture7.PNG" alt="unique products">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Shape of prior data:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture8.PNG" alt="unique products">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Length of total number of unique aisles data list:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture9.PNG" alt="unique aisles">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Fresh fruits and fresh vegetables are best selling top two products in the products list:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture10.PNG" alt="best selling">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Perform cross tabulation or contingency tables of customer products with user_id and aisle_id:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture11.PNG" alt="cross tabulation" width="1050">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Shape of customer products:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture12.PNG" alt="shape of cust_product">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Perform Principal component analysis (PCA) on customer products from sklearn.decomposition import PCA:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture13.PNG" alt="pca">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Plot cluster of class 1 from matplotlib import pyplot as plt:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/class1.png" alt="cluster">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Provide random centers for each clusters:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture14.PNG" alt="day of week vs hour">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Predict the one hundred fifty data points for generating clusters:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture15.PNG" alt="predict 1 to 150 data points">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Plot clusters belonging to class 1, class 2,class 3 and class 4:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/class1-5.png" alt="predict 100 data points" height="600">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Plot sub plots of each clusters belonging to different classes :</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/subplots.png" alt="sub plots" width="1050">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Top 10 products belonging to cluster 0:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture16.PNG" alt="cluster 0">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Top 10 products belonging to cluster 1:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture17.PNG" alt="cluster 1">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Top 10 products belonging to cluster 2:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture18.PNG" alt="cluster 2">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Top 10 products belonging to cluster 3:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture19.PNG" alt="cluster 3">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Top 10 products belonging to cluster 4:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture20.PNG" alt="cluster 4">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h4><strong>A first analysis of the clusters confirm the initial hypothesis that are products which are genereically bought by the majority of the customers:</strong></h4>
+        <br>
+        <br>
+        <ul>
+            <li>fresh fruits</li>
+            <li>fresh vegetables</li>
+            <li>yogurt</li>
+            <li>packaged cheese</li>
+            <li>milk</li>
+        </ul>
+        <br>
+        <br>
+        <h2>Ratio of purchasing orders of most frequently bought products:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture21.PNG" alt="ratio of purchasing orders">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <h2>Percentage of purchasing orders of most frequently bought products:</h2>
+        <br>
+        <ol>
+            <li>
+                <br>
+                <img src="./clustering_screenshots/Capture22.PNG" alt="Percentage of purchasing orders">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <br>
+    </div>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+<footer class="footer page-footer">
+    <div class="section-center">
+        <div class="social-icons">
+            <!-- social icon -->
+            <a href="https://www.facebook.com/" class="social-icon">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="https://twitter.com/" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <!-- end of social icon -->
+            <!-- social icon -->
+            <a href="https://www.instagram.com/" class="social-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- end of social icon -->
+        </div>
+        <p class="footer-text footer-copyright">
+            &copy; <span class="text-primary">2019-2020</span>. all rights
+            reserved
+        </p>
+    </div>
+</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

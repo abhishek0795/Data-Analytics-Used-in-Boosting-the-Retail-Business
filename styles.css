@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "catamaran", "sans-serif";
+  line-height: 1.5;
+}
+
+nav.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+nav.scrollmenu a {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+}
+nav.scrollmenu a:hover {
+  background-color: indigo;
+}
+
+.nav-link {
+  display: block;
+  font-size: 2rem;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: orangered;
+  padding: 0.5rem;
+}
+
+.act-link {
+  background-color: red;
+  color: black;
+  padding: 0.5rem;
+}
+
+.nav-btn {
+  position: fixed;
+  z-index: 1;
+  font-size: 3rem;
+  top: 0;
+  left: 0;
+  margin: 1rem 1.3rem;
+  color: red;
+  cursor: pointer;
+  animation: bounce 2s ease-in-out infinite;
+}
+/* navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgb(111, 208, 238);
+  padding-top: 1rem;
+  padding-left: 2rem;
+  transition: all 0.3 ease-in-out;
+  transform: translateX(-100%);
+}
+.showNav {
+  transform: translateX(0);
+}
+.nav-close {
+  font-size: 2rem;
+  cursor: pointer;
+  padding: right;
+}
+.nav-items {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar {
+    width: 30vw;
+    max-width: 24rem;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.header {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./pexels-photo-264636.jpg") center/cover no-repeat fixed;
+  position: relative;
+}
+.banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+.banner-title1 {
+  font-size: 3rem;
+  color: whitesmoke;
+  animation: slideFromLeft 5s ease-in-out 1;
+}
+.banner-title2 {
+  font-size: 3rem;
+  color: whitesmoke;
+  animation: slideFromRight 5s ease-in-out 1;
+}
+
+.banner-title3 {
+  font-size: 3rem;
+  color: whitesmoke;
+  animation: slideFromLeft 5s ease-in-out 1;
+}
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(1000px);
+  }
+  50% {
+    transform: translateX(-200px);
+  }
+  75% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-1000px);
+  }
+  50% {
+    transform: translateX(200px);
+  }
+  75% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+.text-primary {
+  color: rgb(151, 151, 253);
+}
+/* footer */
+.footer {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgb(131, 20, 57);
+  text-align: center;
+}
+.social-icon {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.social-icon:hover {
+  color: green;
+}
+.footer-text {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}

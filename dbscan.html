@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+
+    <title>DBSCAN Algorithm</title>
+
+    <style>
+        a.active {
+            background-color: #af41aa;
+            color: white;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./dbscan.html">DBSCAN Clustering</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dbscan_output.html">DBSCAN Clustering Output</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container content mt-5 mb-5">
+        <h2 class="display-4 mb-5" align="center"><strong>DBSCAN Clustering</strong></h2>
+        <br>
+        <p class="text-justify"><strong>DBSCAN</strong>(Density-Based Spatial Clustering of Applications with Noise) is the most well-known density-based clustering algorithm, first introduced in 1996 by Ester et. al. Due to its importance in both theory and applications, this algorithm is one of three algorithms awarded the Test of Time Award at
+        SIGKDD 2014.</p>
+        <p class="text-justify">Unlike K-Means, DBSCAN does not require the number of clusters as a parameter. Rather it infers the number of clusters
+        based on the data, and it can discover clusters of arbitrary shape (for comparison, K-Means usually discovers spherical
+        clusters). As I said earlier, the ɛ-neighborhood is fundamental to DBSCAN to approximate local density, so </p>
+        <br>
+        <ul>
+            <h4>The algorithm has two parameters:</h4>
+            <p class="text-justify"><li><b>eps :</b> It defines the neighborhood around a data point i.e. if the distance between two points is lower or equal to ‘eps’ then they are considered as neighbors. If the eps value is chosen too small then large part of the data will be considered as outliers. If it is chosen very large then the clusters will merge and majority of the data points will be in the same clusters. One way to find the eps value is based on the k-distance graph.</li></p>
+            <p class="text-justify"></p><li><b>minPts :</b> The minimum number of data points we want in a neighborhood to define a cluster.</li>
+        </ul>
+        <br>
+        <p><strong>Using these two parameters, DBSCAN categories the data points into three categories:</strong></p>
+        <ul>
+            <li><b>Core Points:</b> A point is a core point if it has more than MinPts points within eps.</b></li>
+            <li><b>Border Points:</b>A point which has fewer than MinPts within eps but it is in the neighborhood of a core point.</li>
+            <li><b>Outlier:</b> A data point o is an outlier if it is neither a core point nor a border point. Essentially, this is the “other” class.</li>
+            <br><br>
+            <img class="rounded mx-auto d-block" src="./dbscan/dbscan_screenshots.jpeg" alt="dbscan">
+        </ul>
+        <br>
+        <b>DBSCAN algorithm can be abstracted in the following steps:</b>
+        <br><br>
+        <ol>
+            <li>Find all the neighbor points within eps and identify the core points or visited with more than MinPts neighbors.</li>
+            <li>For each core point if it is not already assigned to a cluster, create a new cluster.</li>
+            <li>Find recursively all its density connected points and assign them to the same cluster as the core point.</li>
+            <br>
+            <p class="text-justify">A point a and b are said to be density connected if there exist a point c which has a sufficient number of points in its
+            neighbors and both the points a and b are within the eps distance. This is a chaining process. So, if b is neighbor of
+            c, c is neighbor of d, d is neighbor of e, which in turn is neighbor of a implies that b is neighbor of a.</p>
+            <br>
+            <li>Iterate through the remaining unvisited points in the dataset. Those points that do not belong to any cluster are noise.</li>
+        </ol>
+    </div>
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <footer class="footer page-footer">
+        <div class="section-center">
+            <div class="social-icons">
+                <!-- social icon -->
+                <a href="https://www.facebook.com/" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- end of social icon -->
+                <!-- social icon -->
+                <a href="https://twitter.com/" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <!-- end of social icon -->
+                <!-- social icon -->
+                <a href="https://www.instagram.com/" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- end of social icon -->
+            </div>
+            <p class="footer-text footer-copyright">
+                &copy; <span class="text-primary">2019-2020</span>. all rights
+                reserved
+            </p>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

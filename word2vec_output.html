@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    
+    <title>Word2vec Output</title>
+
+    <style>
+       
+       a.active {
+        background-color:#af41aa;
+        color: white;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+       
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+
+        ol {
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+    
+    <body>
+        
+        <div id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./word2vec.html">Word2vec</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./word2vec_output.html">Word2vec Output</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <div class="container mt-5 mb-5">
+            <h2 class="display-4 mb-5" align="center"><strong>Word2vec Output</strong></h2>
+            <ol>
+                <li>
+                    <br>
+                    <h3><strong>Load the order_products__train,order_products__prior and products csv files data</strong></h3>
+                    <br>
+                    <img src="./word2vec_screenshots/1.PNG" alt="load dataset" width="1050">
+                    <br>
+                </li>
+                <br>
+                <br>
+                <li>
+                    <img src="./word2vec_screenshots/2.PNG" alt="products id to a string" width="1050">
+                </li>
+                <br>
+                <br>
+                <li>
+                    <img src="./word2vec_screenshots/3.PNG" alt="extract order products" width="1050">
+                </li>
+                <br>
+                <br>
+                <li>
+                    <img src="./word2vec_screenshots/4.PNG" alt="create final sentences" width="1050">
+                </li>
+                <br>
+                <br>
+                <li>
+                    <img src="./word2vec_screenshots/5.PNG" alt="train word2vec model" width="1050">
+                </li>
+                <br>
+                <br>
+                <li>
+                    <img src="./word2vec_screenshots/6.PNG" alt="organize data for visualization" width="1050">
+                </li>
+                <br>
+                <br>
+                <li>
+                    <img src="./word2vec_screenshots/7.PNG" alt="pca transforms the vector into 2D" width="1050">
+                </li>
+                <br>
+                <br>
+                <li>
+                    <img src="./word2vec_screenshots/8.png" alt="visualize the random sample" width="900">
+                </li>
+            </ol>
+        </div>
+
+        <script>
+            window.onscroll = function () { myFunction() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+        
+        <footer class="footer page-footer">
+            <div class="section-center">
+                <div class="social-icons">
+                    <!-- social icon -->
+                    <a href="https://www.facebook.com/" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <!-- end of social icon -->
+                    <!-- social icon -->
+                    <a href="https://twitter.com/" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <!-- end of social icon -->
+                    <!-- social icon -->
+                    <a href="https://www.instagram.com/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- end of social icon -->
+                </div>
+                <p class="footer-text footer-copyright">
+                    &copy; <span class="text-primary">2019-2020</span>. all rights
+                    reserved
+                </p>
+            </div>
+        </footer>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+    </body>
+
+    </html>

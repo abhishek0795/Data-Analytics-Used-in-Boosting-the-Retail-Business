@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+
+    <title>Data Wrangling</title>
+
+    <style>
+
+        a.active {
+        background-color:#af41aa;
+        color: white;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./data_wrangling.html">Data Wrangling</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./data_wrangling_output.html">Data Wrangling Output</span></a>
+                </li>
+                </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="container content mt-5 mb-5">
+        <h2 class="display-4 mb-5" align="center"><strong>Data Wrangling</strong></h2>
+        <p class="text-justify">Data Wrangling is the process of cleaning ,structuring and enriching
+        raw data into desired data format for better decision making in less
+        time.With the amount of data and data sources rapidly growing and
+        expanding, it is getting more and more essential for the large
+        amounts of available data to be organized for analysis.</p>
+        <p>This process typically includes manually converting/mapping data
+        from one raw form into another format to allow for more
+        convenient consumption and organization of the data.</p>
+        <br>
+        <img class="rounded mx-auto d-block" src="./data_wrangling_screenshots/Capture.PNG" alt="data wrangling">
+        <br>
+        <h2>Steps to perform Data Wrangling:</h2>
+        <br>
+        <p>There are six iterative steps that make up the data wrangling
+        process.</p>
+        <ul>
+            <li><strong>Discovering:</strong>
+                <p>Before you can dive deeply, you must better understand what is in
+                your data, which will inform how you want to analyze it. How you
+                wrangle customer data.</p>
+            </li>
+            <li><strong>Structuring:</strong>
+                <p class="text-justify">This means we have to organize the data this is due to the raw data is of different size or shapes. A single column may turn into several rows for easier analysis.One column may become two. Movement of data is made for
+                easier computation and analysis.</p>
+            </li>
+            <li><strong>Cleaning:</strong>
+                <p class="text-justify">Cleaning the data means removing null values because it is necessary to remove the null values for performing algorithm on datasets like random forest and it will also helps in increasing the performance of analysis.</p>
+            </li>
+            <li><strong>Enrichment</strong>
+                <p>Extract new features or data from the given data set to optimize the performance of the applied model.</p>
+            </li>
+            <li><strong>Validating</strong>
+                <p>This approach is used for improving the quality of data and consistency rules so that transformations that are applied to the data could be verified.</p>
+            </li>
+            <li><strong>Publishing</strong>
+                <p>After completing the steps of Data Wrangling, the steps can be documented so that similar steps can be performed for the same kind of data to save time.</p>
+            </li>
+
+        </ul>
+       </div>
+
+       <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <footer class="footer page-footer">
+        <div class="section-center">
+            <div class="social-icons">
+                <!-- social icon -->
+                <a href="https://www.facebook.com/" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- end of social icon -->
+                <!-- social icon -->
+                <a href="https://twitter.com/" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <!-- end of social icon -->
+                <!-- social icon -->
+                <a href="https://www.instagram.com/" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- end of social icon -->
+            </div>
+            <p class="footer-text footer-copyright">
+                &copy; <span class="text-primary">2019-2020</span>. all rights
+                reserved
+            </p>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

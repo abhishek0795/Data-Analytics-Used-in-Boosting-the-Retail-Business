@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+
+    <title>Apriori Algorithm</title>
+
+    <style>
+
+        a.active {
+        background-color:#af41aa;
+        color: white;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+    
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./market_basket.html">Market Basket Analysis</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./apriori_algo.html">Apriori Algorithm</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+     <div class="container content mt-5 mb-5">
+    <h2 class="display-4 mb-5" align="center"><strong>Market Basket Analysis</strong></h2>
+    <p style="text-align: justify;">In today’s world, the goal of any organization is to increase revenue. Can this be done
+        by pitching just one product at a time to the customer? The answer is a clear <strong>no</strong>. Hence,
+        organizations began mining data related to frequently bought items.</p>
+        <p>&nbsp;</p>
+        <p><img class="rounded mx-auto d-block"
+                src="./images/1.jpg" alt="market-basket-analysis-apriori-algorithm" width="300" height="214"></p>
+        <p>&nbsp;</p>
+        <p style="text-align: justify;"><strong>Market Basket Analysis</strong> is one of the key techniques used by large
+            retailers to uncover associations between items. They try to find out associations between different items and
+            products that can be sold together, which gives assisting in right product placement. Typically, it figures out what
+            products are being bought together and organizations can place products in a similar manner. Let’s understand this
+            better with an example:</p>
+            <p style="text-align: justify;">People who buy Bread usually buy Butter too. The Marketing teams at retail stores should
+                target customers who buy bread and butter and provide an offer to them so that they buy the third item, like eggs.
+            </p>
+            <p><img class="rounded mx-auto d-block"
+               src="./images/2.png" alt="bread-butter" width="396" height="218">
+            </p>
+            <p>&nbsp;</p>
+            <p style="text-align: justify;">So if customers buy bread and butter and see a discount or an offer on eggs, they will
+                be encouraged to spend more and buy the eggs. This is what market basket analysis is all about.<a
+                    name="association-rules"></a></p>
+                    <p style="text-align: justify;">This is just a small example. So, if you take 10000 items data of your Supermart to a
+                        Data Scientist, Just imagine the number of insights you can get. And that is why Association Rule mining is so
+                        important.</p>
+                    <p>&nbsp;</p>
+                    <h2><strong>Association Rule Mining</strong></h2>
+                    <p style="text-align: justify;">Association rules can be thought of as an IF-THEN relationship. Suppose item
+                        <strong>A</strong> is being bought by the customer, then the chances of item <strong>B</strong> being picked by the
+                        customer too under the same <strong>Transaction ID</strong> is found out.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/3.png"
+                            alt="association-rules-apriori-algorithm" width="300" height="102">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p>There are two elements of these rules:</p>
+                    <p><strong>Antecedent</strong> (IF): This is an item/group of items that are typically found in the Itemsets or
+                        Datasets.</p>
+                    <strong>Consequent</strong>
+                    (THEN): This comes along as an item with an Antecedent/group of Antecedents.
+                    <p style="text-align: justify;">But here comes a constraint. Suppose you made a rule about an item, you still have
+                    around 9999 items to consider for rule-making. This is where the Apriori Algorithm comes into play. So before we understand the Apriori Algorithm, let’s understand the math behind it. There are 3 ways to measure association:</p>
+                    <ul>
+                        <li>Support</li>
+                        <li>Confidence</li>
+                        <li>Lift</li>
+                    </ul>
+                    <p>&nbsp;</p>
+                    <p><strong>Support:</strong> It gives the fraction of transactions which contains item A and B. Basically Support tellsus about the frequently bought items or the combination of items bought frequently.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/4.png"
+                            alt="support-apriori" width="200" height="49">
+                    </p>
+                    <p>So with this, we can <strong>filter out</strong> the items that have a <strong>low frequency</strong>.</p>
+                    <p>&nbsp;</p>
+                    <p><strong>Confidence:</strong> It tells us how often the items A and B occur together, given the number times A occurs.
+                    </p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/5.png"
+                            alt="confidence-apriori" width="200" height="48">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p><strong>Lift:</strong> Lift indicates the strength of a rule over the random occurrence of A and B. It basically tells us the strength of any rule.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/6.png"
+                            alt="lift-apriori-algorithm" width="200" height="46">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;"><a style name="apriori-algorithm"></a>Focus on the denominator, it is the probability of the individual support values of A and B and not together. Lift explains the strength of a rule. <strong>More the
+                    Lift more is the strength. </strong>Let’s say for A -&gt; B, the lift value is 4. It means that if you buy A the
+                    chances of buying B is <strong>4 times</strong>. Let’s get started with the Apriori Algorithm now and see how it
+                    works.</p>
+                    <p>&nbsp;</p>
+                    <h2><strong>Apriori Algorithm</strong></h2>
+                    <p style="text-align: justify;">Apriori algorithm uses frequent itemsets to generate association rules. It is based on the concept that a subset of a frequent itemset must also be a frequent itemset. Frequent Itemset is an itemset
+                    whose support value is greater than a threshold value(support).</p>
+                    <p>Let’s say we have the following data of a store.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/7.png"
+                            alt="T1-Apriori-Algorithm" width="150" height="135">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;"><strong>Iteration 1:</strong> Let’s assume the support value is 2 and create the item sets of the size of 1 and calculate their support values.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/8.png"
+                            alt="first-iteration" width="400" height="153">
+                    </p>
+                    <p style="text-align: justify;">As you can see here, item 4 has a support value of 1 which is less than the min support value. So we are going to <strong>discard {4}</strong> in the upcoming iterations. We have the final Table F1.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/9.png"
+                            alt="first-iteration-2" width="400" height="158">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;"><strong>Iteration 2:</strong> Next we will create itemsets of size 2 and calculate their support values. All the combinations of items set in F1 are used in this iteration.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/10.png"
+                            alt="second-iteration" width="528" height="166">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;">Itemsets having Support less than 2 are eliminated again. In this case <strong>{1,2}.&nbsp;</strong>Now, Let’s understand what is pruning and how it makes Apriori one of the best
+                    algorithm for finding frequent itemsets.</p>
+                    <p style="text-align: justify;"><strong>Pruning:</strong> We are going to divide the itemsets in C3 into subsets and eliminate the subsets that are having a support value less than 2.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/11.png"
+                            alt="Pruning-apriori-algorithm" width="450" height="136">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;"><strong>Iteration 3:</strong> We will discard <strong>{1,2,3}</strong> and <strong>{1,2,5}&nbsp;</strong>as they both contain <strong>{1,2}.&nbsp;</strong>This is the main highlight of the Aprior Algorithm.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/12.png"
+                            alt="pruning-2" width="400" height="120">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;"><strong>Iteration 4:</strong> Using sets of F3 we will create C4.</p>
+                    <p><img class="rounded mx-auto d-block"
+                            src="./images/13.png"
+                            alt="fourth-iteration-apriori-algorithm" width="528" height="106">
+                    </p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;">Since the Support of this itemset is less than 2, we will stop here and the final itemset we will have is F3.<br> <strong>Note:</strong> Till now we haven’t calculated the confidence values yet.</p>
+                    <p>With F3 we get the following itemsets:</p>
+                    <p><strong>For I = {1,3,5}</strong>, subsets are {1,3}, {1,5}, {3,5}, {1}, {3}, {5}<br> <strong>For I ={2,3,5}</strong>, subsets are {2,3}, {2,5}, {3,5}, {2}, {3}, {5}</p>
+                    <p>&nbsp;</p>
+                    <p style="text-align: justify;"><strong>Applying Rules:&nbsp;</strong> We will create rules and apply them on itemset F3. Now let’s assume a minimum confidence value is <strong>60%.</strong></p>
+                    <p>For every subsets S of I, you output the rule</p>
+                    <ul>
+                        <li>S –&gt; (I-S) (means S recommends I-S)</li>
+                        <li>if <strong>support(I) / support(S) &gt;= min_conf value</strong></li>
+                    </ul>
+                    <p>&nbsp;</p>
+                    <p><strong>{1,3,5}</strong></p>
+                    <p><strong>Rule 1:</strong> {1,3} –&gt; ({1,3,5} – {1,3}) means 1 &amp; 3 –&gt; 5</p>
+                    <p>Confidence = support(1,3,5)/support(1,3) = 2/3 = <strong>66.66%</strong> <strong>&gt; 60%</strong></p>
+                    <p>Hence Rule 1 is <strong>Selected</strong></p>
+                    <p>&nbsp;</p>
+                    <p><strong>Rule 2:</strong> {1,5} –&gt; ({1,3,5} – {1,5}) means 1 &amp; 5 –&gt; 3</p>
+                    <p>Confidence = support(1,3,5)/support(1,5) = 2/2 = <strong>100%</strong> <strong>&gt; 60%</strong></p>
+                    <p>Rule 2 is <strong>Selected</strong></p>
+                    <p>&nbsp;</p>
+                    <p><strong>Rule 3:</strong> {3,5} –&gt; ({1,3,5} – {3,5}) means 3 &amp; 5 –&gt; 1</p>
+                    <p>Confidence = support(1,3,5)/support(3,5) = 2/3 = <strong>66.66%</strong> <strong>&gt; 60%</strong></p>
+                    <p>Rule 3 is <strong>Selected</strong></p>
+                    <p>&nbsp;</p>
+                    <p><strong>Rule 4:</strong> {1} –&gt; ({1,3,5} – {1}) means 1 –&gt; 3 &amp; 5</p>
+                    <p>Confidence = support(1,3,5)/support(1) = 2/3 = <strong>66.66% &gt; 60%</strong></p>
+                    <p>Rule 4 is <strong>Selected</strong></p>
+                    <p>&nbsp;</p>
+                    <p><strong>Rule 5:</strong> {3} –&gt; ({1,3,5} – {3}) means 3 –&gt; 1 &amp; 5</p>
+                    <p>Confidence = support(1,3,5)/support(3) = 2/4 = <strong>50% &lt;60%</strong></p>
+                    <p>Rule 5 is <strong>Rejected</strong></p>
+                    <p>&nbsp;</p>
+                    <p><strong>Rule 6:</strong> {5} –&gt; ({1,3,5} – {5}) means 5 –&gt; 1 &amp; 3</p>
+                    <p>Confidence = support(1,3,5)/support(5) = 2/4 = 50% &lt; 60%</p>
+                    <p>Rule 6 is <strong>Rejected</strong></p>
+                    <p style="text-align: justify;"><a name="python-implementation"></a>This is how i create rules in Apriori Algorithm and the same steps can be implemented for the itemset <strong>{2,3,5}.&nbsp;</strong>
+                    </p>
+                </div>
+
+                    <script>
+                        window.onscroll = function () { myFunction() };
+
+                        var navbar = document.getElementById("navbar");
+                        var sticky = navbar.offsetTop;
+
+                        function myFunction() {
+                            if (window.pageYOffset >= sticky) {
+                                navbar.classList.add("sticky")
+                            } else {
+                                navbar.classList.remove("sticky");
+                            }
+                        }
+                    </script>
+                <footer class="footer page-footer">
+                    <div class="section-center">
+                        <div class="social-icons">
+                            <!-- social icon -->
+                            <a href="https://www.facebook.com/" class="social-icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <!-- end of social icon -->
+                            <!-- social icon -->
+                            <a href="https://twitter.com/" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <!-- end of social icon -->
+                            <!-- social icon -->
+                            <a href="https://www.instagram.com/" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <!-- end of social icon -->
+                        </div>
+                        <p class="footer-text footer-copyright">
+                            &copy; <span class="text-primary">2019-2020</span>. all rights
+                            reserved
+                        </p>
+                    </div>
+                </footer>
+
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

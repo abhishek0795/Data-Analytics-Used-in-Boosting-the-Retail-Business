@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+    
+    <title>Data Visualizations</title>
+
+    <style>
+        
+        a.active {
+        background-color:#af41aa;
+        color: white;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+
+        ol {
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./visualization.html">Data Visualizations</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./visualization_output.html">Data Visualizations Output</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="container content mt-5 mb-5">
+        <h2 class="display-4 mb-5" align="center"><strong>Data Visualizations</strong></h2>
+        <br>
+        <h3>Data Visualization and it’s techniques:</h3>
+        <br>
+        <p class="text-justify"><strong>Data Visualizations</strong> is the graphic representation of data. It involves producing images that communicate relationships
+        among the represented data to viewers of the images. This communication is achieved through the use of a systematic mapping between graphic marks and data values in the creation of the visualization. This mapping establishes how data values will be represented visually, determining how and to what extent a property of a graphic mark, such as size or color, will change to reflect change in the value of a piece of information.
+        
+        To communicate information clearly and efficiently, data visualization uses statistical graphics, plots, information
+        graphics and other tools. Numerical data may be encoded using dots, lines, or bars, to visually communicate a
+        quantitative message.Effective visualization helps users analyze and reason about data and evidence. It makes
+        complex data more accessible, understandable and usable. Users may have particular analytical tasks, such as making
+        comparisons or understanding causality, and the design principle of the graphic (i.e., showing comparisons or showing
+        causality) follows the task. Tables are generally used where users will look up a specific measurement, while charts of
+        various types are used to show patterns or relationships in the data for one or more variables.</p>
+        <p class="text-justify">Without the concept of visualization, mining and analysis doesn’t play any role of importance as data mining is the idea
+        of finding inferences by analyzing the data through patterns and those patterns can only be represented by different
+        visualization techniques.</p>
+        <h4>Uses of data visualization:</h4>
+        <ul>
+            <li>Powerful way to explore data with presentable results.</li>
+            <li>Primary use is the preprocessing portion of the data mining process.</li>
+            <li>Supports in data cleaning process by finding incorrect and missing values.</li>
+            <li>For variable derivation and selection means to determine which variable to include and discarded in the analysis.</li>
+            <li>Also play role in combining categories as part of the data reduction process.</li>
+        </ul>
+        <h4>Techniques:</h4>
+        <br>
+        <ul>
+            <li><strong>Box plots:</strong>
+                <br>
+                <img src="./visualizations_screenshots/1.png" alt="box plots" width="600px">
+                <p class="text-justify">A method for graphically depicting groups of numerical data through their quartiles. It is a standardized way of
+                displaying the distribution of data based on five features:</p>
+                <ul>
+                    <li>minimum -minimum value in the dataset.</li>
+                    <li>first quartile(25th percentile)- the middle number between the smallest value and the median of the dataset.</li>
+                    <li>median- the middle value of dataset.</li>
+                    <li>third quartile(75th percentile)- the middle value between the median and teh highest value of the dataset</li>
+                    <li>maximum- the maximum value in the dataset</li>
+                </ul>
+                <br>
+                <p>Also the lower and upper quartiles are shown as horizontal lines of the rectangle.It has vertical line inside to
+                indicate the median value.</p>
+            </li>
+            <br>
+            <li><strong>Histograms:</strong>
+                <br>
+                <img src="./visualizations_screenshots/2.png" alt="histograms">
+                <p class="text-justify">It is an accurate representation of the distribution of numerical data, it relates only one variable. Includes bin or
+                bucket- the range of values that is divide the entire range of values into a series of intervals and then count how many
+                values fall in to each interval.</p>
+                <p class="text-justify">Bins are consecutive,non- overlapping intervals of a variable. As the adjacent bins leave no gaps, the rectangles of
+                histogram touch each other to indicate that the original value is continuous.</p>
+            </li>
+            <li><strong>Heat maps:</strong>
+                <br>
+                <img src="./visualizations_screenshots/3.png" alt="heat maps">
+                <br>
+                <p class="text-justify">It is a graphical representation of data where the individual values contained in a matrix are represented as colors.Useful for two purposes: for visualizing correlation tables and for visualizing missing values in the data. In both cases the information is conveyed in a two-dimensional table.</p>
+                <p class="text-justify">Note that heat maps are useful when examining a large number of values, but they are not a replacement for more precise
+                graphical display, such as bar charts, because color differences cannot be perceived accurately.</p>
+                <br>
+            <li><strong>Charts:</strong>
+                <br>
+                <br>
+                <p class="text-justify">It gives a graphical representation of data has various types:</p>
+                <br>
+                <p><strong>Bar charts:</strong></p>
+                <img src="./visualizations_screenshots/4.jpeg" alt="Charts">
+                <br>
+                <br>
+                <p>It represents the categorical data with rectangular bars of heights and lengths proportional to the values they they
+                represent.</p>
+                <br>
+                <p><strong>Line charts:</strong></p>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./visualizations_screenshots/5.png" alt="Line Charts">
+                <br>
+                <br>
+                <p>It is a type of chart which displays information as a series of data points called markers connected by straight line
+                segments.</p>
+                <br>
+                <br>
+                <p><strong>Pie charts:</strong></p>
+                <br>
+                <br>
+                <img src="./visualizations_screenshots/6.png" alt="pie chart" width="600">
+                <br>
+                <br>
+                <p>It is circular statistical graph which decide into slices to illustrate numerical proportion. Here the arc length of
+                each slide is proportional to the quantity it represents.</p>
+                <br><br>
+                <p><strong>Scatter charts:</strong></p>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./visualizations_screenshots/7.png" alt="Scatter chart">
+                <br><br>
+                <p>It is a type of plot or mathematical diagram that display value for typically two variables for a set of data using
+                Cartesian coordinates.</p>
+                <br><br>
+                <p><strong>Bubble charts:</strong></p>
+                <br><br>
+                &nbsp;&nbsp;<img src="./visualizations_screenshots/8.png" alt="Bubble chart">
+                <br><br>
+                <p>It is a variation of scatter chart in which the data points are replaced with bubbles, and an additional dimension of
+                data is represented in the size of the bubbles.</p>
+                <br><br>
+                <p><strong>Time Line charts:</strong></p>
+                <br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./visualizations_screenshots/9.png" alt="Time Line chart">
+                <br><br>
+                <p>It shows the chronological sequence of past or future events on a timescale.</p>
+            </li>
+            <br><br>
+            <li><strong>Tree maps:</strong>
+                <br>
+                <br>
+                <br>
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="./visualizations_screenshots/10.png" alt="Tree Maps" width="600">
+                <br>
+                <br>
+                <p class="text-justify">It is a method of displaying hierarchical data using nested figures like rectangles. Has a tree like structure with each
+                branch is given a rectangle which then tiles with smaller rectangles representing sub branches. A leaf node rectangle has an area proportional to specified dimension of the data. Depending on choice leaf node is
+                colored,sized or both according to chosen attributes.They make efficient use of space,thus display thousands of items on
+                the screen simultaneously.</p>
+            </li>
+        </ul>
+    </div>   
+            <script>
+                window.onscroll = function () { myFunction() };
+
+                var navbar = document.getElementById("navbar");
+                var sticky = navbar.offsetTop;
+
+                function myFunction() {
+                    if (window.pageYOffset >= sticky) {
+                        navbar.classList.add("sticky")
+                    } else {
+                        navbar.classList.remove("sticky");
+                    }
+                }
+            </script>
+        <footer class="footer page-footer">
+            <div class="section-center">
+                <div class="social-icons">
+                    <!-- social icon -->
+                    <a href="https://www.facebook.com/" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <!-- end of social icon -->
+                    <!-- social icon -->
+                    <a href="https://twitter.com/" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <!-- end of social icon -->
+                    <!-- social icon -->
+                    <a href="https://www.instagram.com/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- end of social icon -->
+                </div>
+                <p class="footer-text footer-copyright">
+                    &copy; <span class="text-primary">2019-2020</span>. all rights
+                    reserved
+                </p>
+            </div>
+        </footer>
+                <!-- Optional JavaScript -->
+                <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                    crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>

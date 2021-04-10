@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+
+    <title>Apriori Algorithm Output</title>
+
+    <style>
+        
+        a.active {
+        background-color:#af41aa;
+        color: white;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+        /* list styling */
+        ol{
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./market_basket.html">Market Basket Analysis</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./apriori_algo.html">Apriori Algorithm</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+     <div class="container content mt-5 mb-5">
+         <h2 class="display-4 mb-5" align="center"><strong>Apriori Algorithm</strong></h2>
+         <p class="text-justify">Apriori is an algorithm used to identify frequent item sets (in our case, item pairs). It does so using a "bottom up"
+        approach, first identifying individual items that satisfy a minimum occurence threshold. It then extends the item set,
+        adding one item at a time and checking if the resulting item set still satisfies the specified threshold. The algorithm
+        stops when there are no more items to add that meet the minimum occurrence requirement. Here's an example of apriori in
+        action, assuming a minimum occurence threshold of 3:</p>
+        <p>order 1: apple, egg, milk</p>
+        <p>order 2: carrot, milk</p> 
+        <p>order 3: apple, egg, carrot</p> 
+        <p>order 4: apple, egg</p>
+        <p>order 5: apple, carrot</p> 
+        <p>&nbsp;</p> 
+        <p><strong>Iteration 1:</strong> Count the number of times each item occurs</p>
+        <table width="50%">
+            <tr>
+            <th>item set</th>
+            <th>occurrence count</th>
+            </tr>
+            <tr>
+            <td>{apple}</td>
+            <td>4</td>
+            </tr>
+            <tr>
+            <td>{egg}</td>
+            <td>3</td>
+            </tr>
+            <tr>
+            <td>{milk}</td>
+            <td>2</td>
+            </tr>
+            <tr>
+            <td>{carrot}</td>
+            <td>2</td>
+            </tr>
+        </table>
+        <br>
+        <p>{milk} and {carrot} are eliminated because they do not meet the minimum occurrence threshold.</p>
+        <p>&nbsp;</p>
+        <p><strong>Iteration 2:</strong>Build item sets of size 2 using the remaining items from Iteration 1
+        (ie: apple, egg)</p>
+        <table width="50%">
+            <tr>
+                <th>item set</th>
+                <th>occurrence count</th>
+            </tr>
+            <tr>
+                <td>{apple, egg}</td>
+                <td>3</td>
+            </tr>
+            </table>
+        <br>
+        <p>Only {apple, egg} remains and the algorithm stops since there are no more items to add.<p>
+        <p class="text=justify">If we had more orders and items, we can continue to iterate, building item sets consisting of more than 2 elements. For
+        the problem we are trying to solve (ie: finding relationships between pairs of items), it suffices to implement apriori
+        to get to item sets of size 2.</p>
+        <br>
+        <h1><strong>Apriori Algorithm</strong></h1>
+        <br>
+        <p class="text-justify">Once the item sets have been generated using apriori, we can start mining association rules. Given that we are only
+        looking at item sets of size 2, the association rules we will generate will be of the form {A} -> {B}. One common
+        application of these rules is in the domain of recommender systems, where customers who purchased item A are recommended
+        item B.</p>
+        <p>Here are 3 key metrics to consider when evaluating association rules:</p>
+        <ol>
+            <li><strong>Support:</strong></li>
+            <p class="text-justify">This is the percentage of orders that contains the item set. In the example above, there are 5 orders in total and
+            {apple,egg} occurs in 3 of them, so:</p>
+            <p align="center">support{apple,egg} = 3/5 or 60%</p>
+            <p class="text-justify">The minimum support threshold required by apriori can be set based on knowledge of your domain. In this grocery dataset
+            for example, since there could be thousands of distinct items and an order can contain only a small fraction of these
+            items, setting the support threshold to 0.01% may be reasonable.
+            </p>
+            <li><strong>Confidence:</strong></li>
+            <p class="text-justify">Given two items, A and B, confidence measures the percentage of times that item B is purchased, given that item A was
+            purchased. This is expressed as:</p>
+            <p align="center">confidence{A->B} = support{A,B} / support{A}</p>
+            <p class="text-justify">Confidence values range from 0 to 1, where 0 indicates that B is never purchased when A is purchased, and 1 indicates
+            that B is always purchased whenever A is purchased. Note that the confidence measure is directional. This means that we
+            can also compute the percentage of times that item A is purchased, given that item B was purchased:</p>
+            <p align="center">confidence{B->A} = support{A,B} / support{B}</p>
+            <p>In our example, the percentage of times that egg is purchased, given that apple was purchased is:</p>
+            <p align="center">confidence{apple->egg} = support{apple,egg} / support{apple} = (3/5) / (4/5)
+            = 0.75 or 75%</p>
+            <p class="text-justify">A confidence value of 0.75 implies that out of all orders that contain apple, 75% of them also contain egg. Now, we look
+            at the confidence measure in the opposite direction (ie: egg->apple):</p>
+            <p align="center">confidence{egg->apple} = support{apple,egg} / support{egg}
+            = (3/5) / (3/5)
+            = 1 or 100%</p>
+            <p class="text-justify">Here we see that all of the orders that contain egg also contain apple. But, does this mean that there is a relationship
+            between these two items, or are they occurring together in the same orders simply by chance? To answer this question, we
+            look at another measure which takes into account the popularity of both items.
+            </p>
+            <li><strong>Lift:</strong></li>
+            <p class="text-justify">Given two items, A and B, lift indicates whether there is a relationship between A and B, or whether the two items are
+            occuring together in the same orders simply by chance (ie: at random). Unlike the confidence metric whose value may vary
+            depending on direction (eg: confidence{A->B} may be different from confidence{B->A}), lift has no direction. This means
+            that the lift{A,B} is always equal to the lift{B,A}:</p>
+            <p align="center">lift{A,B} = lift{B,A} = support{A,B} / (support{A} * support{B})</p>
+            In our example, we compute lift as follows:
+            <p align="center">lift{apple,egg} = lift{egg,apple} = support{apple,egg} / (support{apple} * support{egg})
+            = (3/5) / (4/5 * 3/5)
+            = 1.25</p>
+            <p class="text-justify">One way to understand lift is to think of the denominator as the likelihood that A and B will appear in the same order
+            if there was no relationship between them. In the example above, if apple occurred in 80% of the orders and egg occurred
+            in 60% of the orders, then if there was no relationship between them, we would expect both of them to show up together
+            in the same order 48% of the time (ie: 80% * 60%). The numerator, on the other hand, represents how often apple and egg
+            actually appear together in the same order. In this example, that is 60% of the time. Taking the numerator and dividing
+            it by the denominator, we get to how many more times apple and egg actually appear in the same order, compared to if
+            there was no relationship between them (ie: that they are occurring together simply at random).</p>
+            <p>In summary, lift can take on the following values:</p>
+            <p align="center">* lift = 1 implies no relationship between A and B.
+            (ie: A and B occur together only by chance)</p>
+            <p align="center">* lift > 1 implies that there is a positive relationship between A and B.
+            (ie: A and B occur together more often than random)</p>
+            <p align="center">* lift < 1 implies that there is a negative relationship between A and B. (ie: A and B occur together less often than
+                random)
+           </p>
+        </ol>
+        <br>
+        <h3>Part 1:Data Preperation</h3>
+        <br>
+        <ol>
+            <li><h4>Load order data:</h4>
+                <br>
+                <img src="./apriori_screenshots/1a.PNG" alt="data loading">
+            </li>
+            <li>
+                <br><br>
+                <h4>Convert order data into format expected by the association rules function:
+                </h4>
+    
+                <img src="./apriori_screenshots/2a.PNG" alt="data converting">
+                </li>
+            <br>
+            <li>
+                <br>
+                <h4>Display summary details of ordered items data purchased by the customers:</h4>
+                 <br>
+                <img src="./apriori_screenshots/3aaa.PNG" alt="data statistics">
+                <br>
+            </li>
+        </ol>
+        <br>
+        <h4>Association Rules Mining</h4>
+        <img src="./apriori_screenshots/4ab.PNG" alt="association rules mining">
+        <br>
+        <br><br>
+        <h4>Replace item ID with item name and display association rules:</h4>
+        <img src="./apriori_screenshots/5a.PNG" alt="rules_1">
+        <img src="./apriori_screenshots/5b.PNG" alt="rules_2">
+
+     </div>
+
+     <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+    <footer class="footer page-footer">
+        <div class="section-center">
+            <div class="social-icons">
+                <!-- social icon -->
+                <a href="https://www.facebook.com/" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <!-- end of social icon -->
+                <!-- social icon -->
+                <a href="https://twitter.com/" class="social-icon">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <!-- end of social icon -->
+                <!-- social icon -->
+                <a href="https://www.instagram.com/" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- end of social icon -->
+            </div>
+            <p class="footer-text footer-copyright">
+                &copy; <span class="text-primary">2019-2020</span>. all rights
+                reserved
+            </p>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

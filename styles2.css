@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.text-primary {
+  color: #eb1330;
+}
+/* footer */
+.footer {
+  overflow: auto;
+  width: 100%;
+  background: rgb(131, 20, 57);
+  text-align: center;
+}
+.social-icon {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.social-icon:hover {
+  color: green;
+}
+.footer-text {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+}

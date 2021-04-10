@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./fontawesome-free-5.7.2-web 2/css/all.css" />
+    <link rel="stylesheet" href="styles2.css" />
+
+    <style>
+
+        a.active {
+        background-color:#af41aa;
+        color: white;
+        }
+
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky + .content {
+        padding-top: 60px;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color on hover */
+        li a:hover {
+            background-color: #4256c9;
+            color: white;
+        }
+
+        ol {
+            list-style-type: none;
+        }
+    </style>
+
+    <title>K-Means Algorithm</title>
+</head>
+
+<body>
+    
+    <div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./k-means.html">K-Means Clustering</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./k-means_output.html">K-Means Clustering Output</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+    <div class="container content mt-5 mb-5">
+        <h2 class="display-4 mb-5" align="center"><strong>K-Means Clustering</strong></h2>
+        <br>
+        <br>
+        <p class="text-justify"><strong>K-means clustering</strong> is a type of unsupervised learning, which is used when you have unlabeled data (i.e., data without defined categories or
+        groups). The goal of this algorithm is to find groups in the data, with the number of groups represented by the variable
+        K. The algorithm works iteratively to assign each data point to one of K groups based on the features that are provided.
+        Data points are clustered based on feature similarity. The results of the K-means clustering algorithm are:</p>
+        <ul>
+            <li>The centroids of the K clusters, which can be used to label new data</li>
+            <li>Labels for the training data (each data point is assigned to a single cluster)
+            </li>
+        </ul>
+        <p class="text-justify">Rather than defining groups before looking at the data, clustering allows you to find and analyze the groups that have formed organically. The "Choosing K" section below describes how the number of groups can be determined.</p>
+        <p class="text-justify">Each centroid of a cluster is a collection of feature values which define the resulting groups. Examining the centroid feature weights can be used to qualitatively interpret what kind of group each cluster represents.</p>
+        <br>
+        <br>
+        <img src="./clustering_screenshots/k-means.png" alt="k-means clustering">
+        <br>
+        <br>
+        <h3>Business Uses:</h3>
+        <br>
+        <p class="text-justify">The K-means clustering algorithm is used to find groups which have not been explicitly labeled in the data. This can be
+        used to confirm business assumptions about what types of groups exist or to identify unknown groups in complex data
+        sets. Once the algorithm has been run and the groups are defined, any new data can be easily assigned to the correct
+        group.</p>
+        <p>This is a versatile algorithm that can be used for any type of grouping. Some examples of use cases are:</p>
+        <br>
+        <h4>Behavioral segmentation:</h4>
+        <br>
+        <ul>
+            <li>Segment by purchase history.</li>
+            <li>Segment by activities on application, website, or platform.</li>
+            <li>Define personas based on interests.</li>
+            <li>Create profiles based on activity monitoring.</li>
+        </ul>
+        <br>
+        <br>
+        <h4>Inventory categorization:</h4>
+        <br>
+        <ul>
+            <li>Group inventory by sales activity.</li>
+            <li>Group inventory by manufacturing metrics.</li>
+        </ul>
+        <br>
+        <br>
+        <h4>Sorting sensor measurements:</h4>
+        <br>
+        <ul>
+            <li>Detect activity types in motion sensors.</li>
+            <li>Group images.</li>
+            <li>Separate audio.</li>
+            <li>Identify groups in health monitoring.</li>
+        </ul>
+        <br>
+        <br>
+        <h4>Detecting bots or anomalies:</h4>
+        <br>
+        <ul>
+            <li>Separate valid activity groups from bots.</li>
+            <li>Group valid activity to clean up outlier detection.</li>
+        </ul>
+        <p>In addition, monitoring if a tracked data point switches between groups over time can be used to detect meaningful changes in the data.</p>
+        <br>
+        <br>
+        <h3>Algorithm:</h3>
+        <br>
+        <p class="text-justify">The Κ-means clustering algorithm uses iterative refinement to produce a final result. The algorithm inputs are the
+        number of clusters Κ and the data set. The data set is a collection of features for each data point. The algorithms
+        starts with initial estimates for the Κ centroids, which can either be randomly generated or randomly selected from the
+        data set.</p>
+        <br>
+        <h4>The algorithm then iterates between two steps:</h4>
+        <br>
+        <ul>
+            <li><strong>Data assigment step:</strong>
+            <br>
+            <br>
+            <p class="text-justify">Each centroid defines one of the clusters. In this step, each data point is assigned to its nearest centroid, based on the squared Euclidean distance. More formally, if ci is the collection of centroids in set C, then each data point x is
+            assigned to a cluster based on</p>
+            <p><img class="rounded mx-auto d-block" src="./clustering_screenshots/math 1.svg" alt="formula1"></p>
+            <p>where dist( · ) is the standard (L2) Euclidean distance. Let the set of data point assignments for each ith cluster
+            centroid be Si.</p>
+            </li>
+            <li><strong>Centroid update step:</strong>
+                <br>
+                <br>
+                <p>In this step, the centroids are recomputed. This is done by taking the mean of all data points assigned to that
+                centroid's cluster.</p>
+                <p><img class="rounded mx-auto d-block" src="./clustering_screenshots/math 2.svg" alt="formula2"></p>
+            </li>
+        </ul>
+        <br>
+        <p class="text-justify">The algorithm iterates between steps one and two until a stopping criteria is met (i.e., no data points change clusters,the sum of the distances is minimized, or some maximum number of iterations is reached).</p>
+
+        <p class="text-justify">This algorithm is guaranteed to converge to a result. The result may be a local optimum (i.e. not necessarily the best possible outcome), meaning that assessing more than one run of the algorithm with randomized starting centroids may give
+        a better outcome.</p>
+        <br><br>
+        <h3>Choosing K:</h3>
+        <br>
+        <p class="text-justify">The algorithm described above finds the clusters and data set labels for a particular pre-chosen K. To find the number
+        of clusters in the data, the user needs to run the K-means clustering algorithm for a range of K values and compare the results. In general, there is no method for determining exact value of K, but an accurate estimate can be obtained using
+        the following techniques.</p>
+        <p class="text-justify">One of the metrics that is commonly used to compare results across different values of K is the mean distance between data points and their cluster centroid. Since increasing the number of clusters will always reduce the distance to data points, increasing K will always decrease this metric, to the extreme of reaching zero when K is the same as the number of data points. Thus, this metric cannot be used as the sole target. Instead, mean distance to the centroid as a function of K is plotted and the "elbow point," where the rate of decrease sharply shifts, can be used to roughly
+        determine K.</p>
+        <p class="text-justify">A number of other techniques exist for validating K, including cross-validation, information criteria, the information theoretic jump method, the silhouette method, and the G-means algorithm. In addition, monitoring the distribution of data points across groups provides insight into how the algorithm is splitting the data for each K.</p>
+        <br>
+        <br>
+        <h3>Feature Engineering:</h3>  
+        <br>
+        <p class="text-justify">Feature engineering is the process of using domain knowledge to choose which data metrics to input as features into a machine learning algorithm. Feature engineering plays a key role in <strong>K-means clustering;</strong>  using meaningful features that capture the variability of the data is essential for the algorithm to find all of the naturally-occurring groups.</p> 
+        <p>Categorical data (i.e., category labels such as gender, country, browser type) needs to be encoded or separated in a way that can still work with the algorithm.</p>   
+        </div>
+        <script>
+            window.onscroll = function () { myFunction() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+        <footer class="footer page-footer">
+            <div class="section-center">
+                <div class="social-icons">
+                    <!-- social icon -->
+                    <a href="https://www.facebook.com/" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <!-- end of social icon -->
+                    <!-- social icon -->
+                    <a href="https://twitter.com/" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <!-- end of social icon -->
+                    <!-- social icon -->
+                    <a href="https://www.instagram.com/" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <!-- end of social icon -->
+                </div>
+                <p class="footer-text footer-copyright">
+                    &copy; <span class="text-primary">2019-2020</span>. all rights
+                    reserved
+                </p>
+            </div>
+        </footer>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
