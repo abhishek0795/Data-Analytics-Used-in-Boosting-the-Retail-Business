@@ -8,4 +8,11 @@ https://www.instacart.com/datasets/grocery-shopping-2017
 
 ## Article Published Link of Above Project
 
+### Journal Link
+
 http://sersc.org/journals/index.php/IJAST/article/view/11385
+
+### Scopus Database Link
+
+https://www.scopus.com/record/display.uri?eid=2-s2.0-85084046598&origin=inward&txGid=67032312dff40125c7adea9640fd9d49
+
